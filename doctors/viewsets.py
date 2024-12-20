@@ -6,6 +6,9 @@ from .models import Doctor, Department, DoctorAvailability, MedicalNote
 
 
 class DoctorViewSet(viewsets.ModelViewSet):
+    """
+    List all doctors or create a new doctors
+    """
     serializer_class = DoctorSerializer
     queryset = Doctor.objects.all()
 
@@ -25,14 +28,23 @@ class DoctorViewSet(viewsets.ModelViewSet):
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
+    """
+    List all departments or create a new department.
+    """
     serializer_class = DepartmentSerializer
     queryset = Department.objects.all()
 
 
 class DoctorAvailabilityViewSet(viewsets.ModelViewSet):
+    """
+    List all doctor availabilities or create a new doctor availability.
+    """
     serializer_class = DoctorAvailabilitySerializer
     queryset = DoctorAvailability.objects.all()
 
 class MedicalNoteViewSet(viewsets.ModelViewSet):
+    """
+    List all medical notes or create a new medical note.
+    """
     serializer_class = MedicalNoteSerializer
     queryset = MedicalNote.objects.all()
