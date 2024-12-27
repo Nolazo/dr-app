@@ -12,13 +12,15 @@ class DoctorViewSet(viewsets.ModelViewSet):
     serializer_class = DoctorSerializer
     queryset = Doctor.objects.all()
 
+    
+    #Custom actions
     @action(['POST'], detail=True, url_path='set-on-vacation')
     def set_on_vacation(self, requests, pk):
         doctor = self.get_object()
         doctor.is_on_vacation = True
         doctor.save()
         return Response({"status": "El doctor estÃ¡ en vacaciones"})
-
+    
     @action(['POST'], detail=True, url_path='set-off-vacation')
     def set_off_vacation(self, requests, pk):
         doctor = self.get_object()

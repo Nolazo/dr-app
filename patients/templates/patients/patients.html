@@ -14,12 +14,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for doctor in doctors %}
+            {% for patient in patients %}
             <tr>
-                <td>{{ doctor.id }}</td>
-                <td>{{ doctor.first_name }}</td>
-                <td>{{ doctor.last_name }}</td>
-                <td>{{ doctor.qualification }}</td>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.first_name }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.qualification }}</td>
             </tr>
             {% endfor %}
         </tbody>
